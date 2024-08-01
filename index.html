@@ -1,18 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Snake</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Snake Game</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
     <div class="container">
-        <div class="score">Score: <span id="score">0</span></div>
-        <div id="game-board"></div>
+      <div class="score">Score: <span id="score">0</span></div>
+      <div id="game-board">
         <div id="game-over" class="hidden">Game Over</div>
-        <button id="start-button">Start Game</button>
+      </div>
+      <button id="start-button">Start Game</button>
+      <div id="controls" class="hidden">
+        <button class="control-btn" id="up-btn">↑</button>
+        <button class="control-btn" id="left-btn">←</button>
+        <button class="control-btn" id="down-btn">↓</button>
+        <button class="control-btn" id="right-btn">→</button>
+      </div>
     </div>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>

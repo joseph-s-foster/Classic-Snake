@@ -1,11 +1,15 @@
-// script.js
 document.addEventListener('DOMContentLoaded', () => {
     const gameBoard = document.getElementById('game-board');
     const scoreDisplay = document.getElementById('score');
     const startButton = document.getElementById('start-button');
     const gameOverDisplay = document.getElementById('game-over');
+    const controls = document.getElementById('controls');
+    const upBtn = document.getElementById('up-btn');
+    const leftBtn = document.getElementById('left-btn');
+    const downBtn = document.getElementById('down-btn');
+    const rightBtn = document.getElementById('right-btn');
 
-    const boardSize = 16;
+    const boardSize = 20;
     const boardWidth = gameBoard.clientWidth / boardSize;
     const boardHeight = gameBoard.clientHeight / boardSize;
 
@@ -16,13 +20,15 @@ document.addEventListener('DOMContentLoaded', () => {
     let intervalId;
 
     function startGame() {
-        snake = [{ x: 10, y: 0 }]; // start point
-        direction = { x: 0, y: 1 }; // start direction
+        snake = [{ x: 10, y: 0 }];
+        direction = { x: 0, y: 1 }; // Set initial direction to move right
         food = spawnFood();
         score = 0;
         scoreDisplay.textContent = score;
         gameBoard.classList.remove('hidden');
         gameOverDisplay.classList.add('hidden');
+        controls.classList.remove('hidden');
+        startButton.classList.add('hidden');
         clearInterval(intervalId);
         intervalId = setInterval(updateGame, 100);
         drawGame();
@@ -46,6 +52,8 @@ document.addEventListener('DOMContentLoaded', () => {
             clearInterval(intervalId);
             gameBoard.classList.add('hidden');
             gameOverDisplay.classList.remove('hidden');
+            controls.classList.add('hidden');
+            startButton.classList.remove('hidden');
             return;
         }
 
@@ -103,6 +111,29 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    function handleControlClick(event) {
+        const btnId = event.target.id;
+
+        switch (btnId) {
+            case 'left-btn':
+                if (direction.x === 0) direction = { x: -1, y: 0 };
+                break;
+            case 'up-btn':
+                if (direction.y === 0) direction = { x: 0, y: -1 };
+                break;
+            case 'right-btn':
+                if (direction.x === 0) direction = { x: 1, y: 0 };
+                break;
+            case 'down-btn':
+                if (direction.y === 0) direction = { x: 0, y: 1 };
+                break;
+        }
+    }
+
     document.addEventListener('keydown', changeDirection);
     startButton.addEventListener('click', startGame);
+    upBtn.addEventListener('click', handleControlClick);
+    leftBtn.addEventListener('click', handleControlClick);
+    downBtn.addEventListener('click', handleControlClick);
+    rightBtn.addEventListener('click', handleControlClick);
 });
