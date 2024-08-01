@@ -14,26 +14,35 @@ body {
 }
 
 #game-board {
-    width: 400px;
-    height: 400px;
+    width: 320px;
+    height: 320px;
     background-color: #000;
     position: relative;
     margin: 20px auto;
-    border: 2px solid #333;
+    box-sizing: border-box;
+}
+
+#game-over {
+    font-size: 2rem;
+    color: red;
+    position: relative;
+    margin: 162px 0 162px 0 ;
+    box-sizing: border-box;
+}
+
+
+.snake, .food {
+    width: 20px;
+    height: 20px;
+    position: absolute;
 }
 
 .snake {
-    width: 20px;
-    height: 20px;
     background-color: #0f0;
-    position: absolute;
 }
 
 .food {
-    width: 20px;
-    height: 20px;
-    background-color: yellow;
-    position: absolute;
+    background-color: #f00;
 }
 
 .score {
@@ -45,4 +54,8 @@ body {
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
+}
+
+.hidden {
+    display: none;
 }

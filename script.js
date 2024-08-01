@@ -3,10 +3,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const gameBoard = document.getElementById('game-board');
     const scoreDisplay = document.getElementById('score');
     const startButton = document.getElementById('start-button');
+    const gameOverDisplay = document.getElementById('game-over');
 
-    const boardSize = 20;
-    const boardWidth = gameBoard.offsetWidth / boardSize;
-    const boardHeight = gameBoard.offsetHeight / boardSize;
+    const boardSize = 16;
+    const boardWidth = gameBoard.clientWidth / boardSize;
+    const boardHeight = gameBoard.clientHeight / boardSize;
 
     let snake;
     let direction;
@@ -15,11 +16,13 @@ document.addEventListener('DOMContentLoaded', () => {
     let intervalId;
 
     function startGame() {
-        snake = [{ x: 10, y: 0 }];
-        direction = { x: 0, y: 1 }; // Set initial direction to move right
+        snake = [{ x: 10, y: 0 }]; // start point
+        direction = { x: 0, y: 1 }; // start direction
         food = spawnFood();
         score = 0;
         scoreDisplay.textContent = score;
+        gameBoard.classList.remove('hidden');
+        gameOverDisplay.classList.add('hidden');
         clearInterval(intervalId);
         intervalId = setInterval(updateGame, 100);
         drawGame();
@@ -41,7 +44,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (head.x < 0 || head.x >= boardWidth || head.y < 0 || head.y >= boardHeight || snake.some(segment => segment.x === head.x && segment.y === head.y)) {
             clearInterval(intervalId);
-            alert('Game Over');
+            gameBoard.classList.add('hidden');
+            gameOverDisplay.classList.remove('hidden');
             return;
         }
 
@@ -64,6 +68,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const snakeElement = document.createElement('div');
             snakeElement.style.left = `${segment.x * boardSize}px`;
             snakeElement.style.top = `${segment.y * boardSize}px`;
+            snakeElement.style.width = `${boardSize}px`;
+            snakeElement.style.height = `${boardSize}px`;
             snakeElement.classList.add('snake');
             gameBoard.appendChild(snakeElement);
         });
@@ -71,6 +77,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const foodElement = document.createElement('div');
         foodElement.style.left = `${food.x * boardSize}px`;
         foodElement.style.top = `${food.y * boardSize}px`;
+        foodElement.style.width = `${boardSize}px`;
+        foodElement.style.height = `${boardSize}px`;
         foodElement.classList.add('food');
         gameBoard.appendChild(foodElement);
     }
