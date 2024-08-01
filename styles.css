@@ -1,0 +1,48 @@
+/* styles.css */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    text-align: center;
+}
+
+#game-board {
+    width: 400px;
+    height: 400px;
+    background-color: #000;
+    position: relative;
+    margin: 20px auto;
+    border: 2px solid #333;
+}
+
+.snake {
+    width: 20px;
+    height: 20px;
+    background-color: #0f0;
+    position: absolute;
+}
+
+.food {
+    width: 20px;
+    height: 20px;
+    background-color: yellow;
+    position: absolute;
+}
+
+.score {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+#start-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
