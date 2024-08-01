@@ -5,6 +5,7 @@ body {
   margin: 0;
   background-color: #000;
   font-family: Arial, sans-serif;
+  overflow: hidden; /* Hide overflow in both directions */
 }
 
 .container {
@@ -45,7 +46,7 @@ body {
 }
 
 .food {
- background-color: #f00;
+  background-color: #f00;
 }
 
 .score {
@@ -122,4 +123,25 @@ body {
 
 .flex {
   display: flex;
+}
+
+/* Add media queries for mobile devices */
+@media (max-width: 480px) {
+  #controls {
+    grid-template-columns: repeat(3, 1fr); /* Adjust the columns to be more flexible */
+    grid-template-rows: repeat(3, 1fr); /* Adjust the rows to be more flexible */
+    gap: 4px; /* Reduce the gap for smaller screens */
+  }
+
+  #controls button {
+    width: 48px; /* Reduce button size */
+    height: 48px; /* Reduce button size */
+    font-size: 1.25rem; /* Adjust font size */
+  }
+
+  #start-button {
+    margin: 50px 0 0 48px;
+    padding: 8px 16px 8px 16px;
+    font-size: 1.5rem;
+  }
 }
