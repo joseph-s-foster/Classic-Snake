@@ -51,7 +51,7 @@ Welcome to the Snake Game! This is a classic implementation of the Snake game us
 
 ## Link to site
 
-- [Classic Snake](https://joseph-s-foster.github.io/Classic-Snake/)
+[Classic Snake](https://joseph-s-foster.github.io/Classic-Snake/)
 
 ## Screenshot
 
