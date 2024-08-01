@@ -8,8 +8,13 @@ body {
   overflow: hidden;
 }
 
+
 .container {
   text-align: center;
+  width: 100%;
+  max-width: 360px; /* Added max-width for better mobile scaling */
+  padding: 16px;
+  box-sizing: border-box;
 }
 
 #game-board {
@@ -78,6 +83,7 @@ body {
   width: 48px;
   height: 48px;
   cursor: pointer;
+  user-select: none;
 }
 
 #up-btn {
@@ -106,7 +112,7 @@ grid-row: 2;
 }
 
 #start-button {
-  height: 32px;
+  height: 30px;
   text-align: center;
   width: 64px;
   color: grey;
@@ -114,7 +120,7 @@ grid-row: 2;
   border: solid 3px grey;
   border-radius: 3px;
   display: block;
-  margin: 45px 0 0 48px;
+  margin: 46px 0 0 48px;
   padding: 8px 16px 8px 16px;
   font-size: 1.5rem;
   cursor: pointer;
