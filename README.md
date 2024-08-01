@@ -1,6 +1,6 @@
 [![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)
 
-# Snake
+# Classic Snake
 
 ## Description
 
@@ -51,7 +51,7 @@ Welcome to the Snake Game! This is a classic implementation of the Snake game us
 
 ## Link to site
 
-- Coming soon
+- [Classic Snake](https://joseph-s-foster.github.io/Classic-Snake/)
 
 ## Screenshot
 
