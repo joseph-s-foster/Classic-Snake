@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
     score = 0;
     scoreDisplay.textContent = score;
     gameBoard.classList.remove("hidden");
-    gameOverDisplay.classList.add("hidden");
+    gameOverDisplay.classList.remove("flex");
     clearInterval(intervalId);
     intervalId = setInterval(updateGame, 100); // movement speed in ms
     drawGame();
@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ) {
       clearInterval(intervalId);
       gameBoard.classList.add("hidden");
-      gameOverDisplay.classList.remove("hidden");
+      gameOverDisplay.classList.add("flex");
       controls.classList.add("hidden");
       startButton.classList.remove("hidden");
       console.log("Game Over");

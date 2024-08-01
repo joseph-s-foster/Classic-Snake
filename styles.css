@@ -1,86 +1,125 @@
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    background-color: #000;
-    font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #000;
+  font-family: Arial, sans-serif;
 }
 
 .container {
-    text-align: center;
+  text-align: center;
 }
 
 #game-board {
-    width: 320px;
-    height: 320px;
-    background-color: #1b1b1b;
-    position: relative;
-    margin: 20px auto;
-    box-sizing: border-box;
+  width: 320px;
+  height: 320px;
+  background-color: #1b1b1b;
+  position: relative;
+  margin: 20px auto;
+  box-sizing: border-box;
 }
 
 #game-over {
-    font-size: 2rem;
-    color: red;
-    position: relative;
-    margin: 162px 0 162px 0 ;
-    box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+  width: 320px;
+  height: 320px;
+  background-color: #1b1b1b;
+  font-size: 2rem;
+  color: red;
+  position: relative;
+  margin: 20px auto;
+  box-sizing: border-box;
 }
 
-
-.snake, .food {
-    width: 20px;
-    height: 20px;
-    position: absolute;
+.snake,
+.food {
+  width: 20px;
+  height: 20px;
+  position: absolute;
 }
 
 .snake {
-    background-color: #0f0;
+  background-color: #0f0;
 }
 
 .food {
-    background-color: #f00;
+ background-color: #f00;
 }
 
 .score {
-    color: grey;
-    font-size: 24px;
-    margin-bottom: 10px;
+  color: grey;
+  font-size: 24px;
+  margin: 16px;
 }
 
-#start-button {
-    color: grey;
-    background-color: #000;
-    border: solid 3px grey;
-    border-radius: 3px;
-    margin-top: 16px;
-    padding: 8px 16px;
-    font-size: 1.5rem;
-    cursor: pointer;
-}
-
-.hidden {
-    display: none;
+.dpad {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-top: 48px;
 }
 
 #controls {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 48px);
+  grid-template-rows: repeat(3, 48px);
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
 }
 
 #controls button {
-    color: grey;
-    background-color: #000;
-    border: solid 3px grey;
-    border-radius: 3px;
-    margin: 16px;
-    padding-bottom: 6px;
-    width: 48px;
-    height: 48px;
-    font-size: 1.75rem;
-    cursor: pointer;
+  color: grey;
+  background-color: #000;
+  border: solid 3px grey;
+  border-radius: 3px;
+  margin: 0;
+  padding-bottom: 6px;
+  width: 48px;
+  height: 48px;
+  font-size: 1.75rem;
+  cursor: pointer;
+}
+
+#up-btn {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+#down-btn {
+  grid-column: 2;
+  grid-row: 3;
+}
+
+#left-btn {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+#right-btn {
+  grid-column: 3;
+  grid-row: 2;
+}
+
+#start-button {
+  height: 48px;
+  color: grey;
+  background-color: #000;
+  border: solid 3px grey;
+  border-radius: 3px;
+  display: block;
+  margin: 56px 0 0 48px;
+  padding: 8px 16px 8px 16px;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+.flex {
+  display: flex;
 }
