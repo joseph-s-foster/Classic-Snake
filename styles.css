@@ -40,9 +40,8 @@ body {
 
 .snake,
 .food {
-  width: 20px;
-  height: 20px;
   position: absolute;
+  box-sizing: border-box;
 }
 
 .snake {
