@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
     gameBoard.classList.remove("hidden");
     gameOverDisplay.classList.remove("flex");
     clearInterval(intervalId);
-    intervalId = setInterval(updateGame, 100); // movement speed in ms
+    intervalId = setInterval(updateGame, 500); // movement speed in ms
     drawGame();
   }
 
