@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const leftBtn = document.getElementById("left-btn");
   const downBtn = document.getElementById("down-btn");
   const rightBtn = document.getElementById("right-btn");
-  const backgroundSound = document.getElementById("background-sound");
+  // const backgroundSound = document.getElementById("background-sound");
 
   const boardSize = 16; // snake and food size
   const boardWidth = gameBoard.clientWidth / boardSize;
@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let intervalId;
 
   function startGame() {
-    backgroundSound.play(); // Play background sound when page loads
+    // backgroundSound.play(); // Play background sound when page loads
     snake = [{ x: 8, y: 0 }]; // sets start position
     direction = { x: 0, y: 1 }; // sets start direction
     food = spawnFood();
@@ -60,8 +60,8 @@ document.addEventListener("DOMContentLoaded", () => {
       snake.some((segment) => segment.x === head.x && segment.y === head.y)
     ) {
       clearInterval(intervalId);
-      backgroundSound.pause(); // stops music playback
-      backgroundSound.currentTime = 0; // resets playback to the beginning
+      // backgroundSound.pause(); // stops music playback
+      // backgroundSound.currentTime = 0; // resets playback to the beginning
       gameBoard.classList.add("hidden");
       gameOverDisplay.classList.add("flex");
       controls.classList.add("hidden");
