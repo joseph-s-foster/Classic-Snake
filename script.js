@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function startGame() {
     snake = [{ x: 10, y: 0 }]; // sets start position
     direction = { x: 0, y: 1 }; // sets start direction
-    food = spawnFood(); // creates food
+    food = spawnFood();
     score = 0; // initializes score counter
     scoreDisplay.textContent = score;
     gameBoard.classList.remove("hidden");
@@ -82,6 +82,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function drawGame() {
     gameBoard.innerHTML = "";
+
+    // creates and sets position for snake segments
     snake.forEach((segment) => {
       const snakeElement = document.createElement("div");
       snakeElement.style.left = `${segment.x * boardSize}px`;
@@ -92,6 +94,7 @@ document.addEventListener("DOMContentLoaded", () => {
       gameBoard.appendChild(snakeElement);
     });
 
+    // creates and sets position for food element
     const foodElement = document.createElement("div");
     foodElement.style.left = `${food.x * boardSize}px`;
     foodElement.style.top = `${food.y * boardSize}px`;
@@ -103,13 +106,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let activeButton = null;
 
+  // change direction logic
   function changeDirection(event) {
     const key = event.keyCode;
     const LEFT = 37,
       UP = 38,
       RIGHT = 39,
       DOWN = 40;
-
+    
+    // sets parameters for arrow keys on desktop
     switch (key) {
       case LEFT:
         if (direction.x === 0) direction = { x: -1, y: 0 };
@@ -126,6 +131,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  // sets parameters for touchscreen devices
   function handleControlClick(btnId) {
     switch (btnId) {
       case "left-btn":
@@ -143,6 +149,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  // improves repsonsiveness by allowing no-lift sliding on touchscreen devices
   function touchStartHandler(event) {
     event.preventDefault();
     activeButton = event.target;
@@ -168,16 +175,18 @@ document.addEventListener("DOMContentLoaded", () => {
     activeButton = null;
   }
 
+  // uses arrow keys to change direction
   document.addEventListener("keydown", changeDirection);
   startButton.addEventListener("click", startGame);
 
+  // emulates a dpad on touch screen devices
   const buttons = [upBtn, leftBtn, downBtn, rightBtn];
   buttons.forEach((btn) => {
     btn.addEventListener("touchstart", touchStartHandler);
     btn.addEventListener("touchmove", touchMoveHandler);
     btn.addEventListener("touchend", touchEndHandler);
 
-    // Optional: Adding click event listeners for desktop devices
+    // adds click event listeners for use with a mouse on desktop
     btn.addEventListener("click", (event) =>
       handleControlClick(event.target.id)
     );
