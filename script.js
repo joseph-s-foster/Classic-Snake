@@ -1,4 +1,3 @@
-// script.js
 document.addEventListener("DOMContentLoaded", () => {
   const gameBoard = document.getElementById("game-board");
   const scoreDisplay = document.getElementById("score");
@@ -23,8 +22,8 @@ document.addEventListener("DOMContentLoaded", () => {
   function startGame() {
     snake = [{ x: 10, y: 0 }]; // sets start position
     direction = { x: 0, y: 1 }; // sets start direction
-    food = spawnFood();
-    score = 0;
+    food = spawnFood(); // creates food
+    score = 0; // initializes score counter
     scoreDisplay.textContent = score;
     gameBoard.classList.remove("hidden");
     gameOverDisplay.classList.remove("flex");
@@ -33,6 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
     drawGame();
   }
 
+  // randomizes food location
   function spawnFood() {
     let foodX, foodY;
     do {
@@ -68,6 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     snake.unshift(head);
 
+    // increases score
     if (head.x === food.x && head.y === food.y) {
       score++;
       scoreDisplay.textContent = score;
