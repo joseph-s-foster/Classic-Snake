@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const downBtn = document.getElementById("down-btn");
   const rightBtn = document.getElementById("right-btn");
 
-  const boardSize = 16;
+  const boardSize = 16; // snake and food size
   const boardWidth = gameBoard.clientWidth / boardSize;
   const boardHeight = gameBoard.clientHeight / boardSize;
 
@@ -113,7 +113,7 @@ document.addEventListener("DOMContentLoaded", () => {
       UP = 38,
       RIGHT = 39,
       DOWN = 40;
-    
+
     // sets parameters for arrow keys on desktop
     switch (key) {
       case LEFT:
@@ -149,11 +149,11 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // improves repsonsiveness by allowing no-lift sliding on touchscreen devices
+  // improves responsiveness by allowing no-lift sliding on touchscreen devices
   function touchStartHandler(event) {
     event.preventDefault();
-    activeButton = event.target;
-    handleControlClick(activeButton.id);
+    activeButton = event.target.closest(".control-btn");
+    if (activeButton) handleControlClick(activeButton.id);
   }
 
   function touchMoveHandler(event) {
@@ -180,15 +180,13 @@ document.addEventListener("DOMContentLoaded", () => {
   startButton.addEventListener("click", startGame);
 
   // emulates a dpad on touch screen devices
-  const buttons = [upBtn, leftBtn, downBtn, rightBtn];
-  buttons.forEach((btn) => {
-    btn.addEventListener("touchstart", touchStartHandler);
-    btn.addEventListener("touchmove", touchMoveHandler);
-    btn.addEventListener("touchend", touchEndHandler);
+  controls.addEventListener("touchstart", touchStartHandler);
+  controls.addEventListener("touchmove", touchMoveHandler);
+  controls.addEventListener("touchend", touchEndHandler);
 
-    // adds click event listeners for use with a mouse on desktop
-    btn.addEventListener("click", (event) =>
-      handleControlClick(event.target.id)
-    );
+  // adds click event listeners for use with a mouse on desktop
+  controls.addEventListener("click", (event) => {
+    const button = event.target.closest(".control-btn");
+    if (button) handleControlClick(button.id);
   });
 });
