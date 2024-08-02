@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const downBtn = document.getElementById("down-btn");
   const rightBtn = document.getElementById("right-btn");
 
-  const boardSize = 20;
+  const boardSize = 16;
   const boardWidth = gameBoard.clientWidth / boardSize;
   const boardHeight = gameBoard.clientHeight / boardSize;
 
@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let intervalId;
 
   function startGame() {
-    snake = [{ x: 10, y: 0 }]; // sets start position
+    snake = [{ x: 8, y: 0 }]; // sets start position
     direction = { x: 0, y: 1 }; // sets start direction
     food = spawnFood();
     score = 0; // initializes score counter
@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
     gameBoard.classList.remove("hidden");
     gameOverDisplay.classList.remove("flex");
     clearInterval(intervalId);
-    intervalId = setInterval(updateGame, 100); // movement speed in ms
+    intervalId = setInterval(updateGame, 125); // movement speed in ms
     drawGame();
   }
 

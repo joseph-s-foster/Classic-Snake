@@ -89,6 +89,10 @@ body {
   justify-content: center;
 }
 
+img {
+  width: 24px;
+}
+
 #up-btn {
   grid-column: 2;
   grid-row: 1;
@@ -99,15 +103,27 @@ body {
   grid-row: 3;
 }
 
+#down-btn img {
+transform: rotate(180deg);
+}
+
 #left-btn {
   grid-column: 1;
   grid-row: 2;
 }
 
+#left-btn img {
+  transform: rotate(270deg);
+  }
+
 #right-btn {
   grid-column: 3;
   grid-row: 2;
 }
+
+#right-btn img {
+  transform: rotate(90deg);
+  }
 
 #center-btn {
   grid-column: 2;
