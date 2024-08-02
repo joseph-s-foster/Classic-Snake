@@ -145,8 +145,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document.addEventListener("keydown", changeDirection);
   startButton.addEventListener("click", startGame);
+
+  // for usage with mouse clicks
   upBtn.addEventListener("click", handleControlClick);
   leftBtn.addEventListener("click", handleControlClick);
   downBtn.addEventListener("click", handleControlClick);
   rightBtn.addEventListener("click", handleControlClick);
+
+  // for improved responsiveness on mobile devices
+  upBtn.addEventListener("touchstart", handleControlClick);
+  leftBtn.addEventListener("touchstart", handleControlClick);
+  downBtn.addEventListener("touchstart", handleControlClick);
+  rightBtn.addEventListener("touchstart", handleControlClick);
 });
