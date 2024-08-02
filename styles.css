@@ -131,8 +131,9 @@ grid-row: 2;
 }
 
 .cat {
-  width: 32px;
-  height: 32px;
+  color: #808080;
+  width: 48px;
+  height: 48px;
   position: fixed;
   bottom: 32px;
   left: 50%;
