@@ -8,12 +8,17 @@ Welcome to the Snake Game! This is a classic implementation of the Snake game us
 
 ## Table of Contents
 
-- [Features](#features)
-- [How to Play](#instructions)
-- [Installation](#installation)
-- [Link](#link-to-site)
-- [Screenshot](#screenshot)
-- [Acknowledgments](#acknowledgments)
+[Features](#features)
+
+[How to Play](#instructions)
+
+[Installation](#installation)
+
+[Link](#link-to-site)
+
+[Screenshot](#screenshot)
+
+[Acknowledgments](#acknowledgments)
 
 ## Features
 
