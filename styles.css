@@ -78,12 +78,16 @@ body {
 
 .control-btn {
   color: #000;
+  font-size: 1.5rem;
   background-color: grey;
   margin: 0;
   width: 48px;
   height: 48px;
   cursor: pointer;
   user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #up-btn {
