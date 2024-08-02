@@ -101,6 +101,8 @@ document.addEventListener("DOMContentLoaded", () => {
     gameBoard.appendChild(foodElement);
   }
 
+  let activeButton = null;
+
   function changeDirection(event) {
     const key = event.keyCode;
     const LEFT = 37,
@@ -124,9 +126,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  function handleControlClick(event) {
-    const btnId = event.target.id;
-
+  function handleControlClick(btnId) {
     switch (btnId) {
       case "left-btn":
         if (direction.x === 0) direction = { x: -1, y: 0 };
@@ -143,18 +143,43 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  function touchStartHandler(event) {
+    event.preventDefault();
+    activeButton = event.target;
+    handleControlClick(activeButton.id);
+  }
+
+  function touchMoveHandler(event) {
+    event.preventDefault();
+    const touch = event.touches[0];
+    const element = document.elementFromPoint(touch.clientX, touch.clientY);
+
+    if (
+      element &&
+      element !== activeButton &&
+      element.classList.contains("control-btn")
+    ) {
+      activeButton = element;
+      handleControlClick(activeButton.id);
+    }
+  }
+
+  function touchEndHandler(event) {
+    activeButton = null;
+  }
+
   document.addEventListener("keydown", changeDirection);
   startButton.addEventListener("click", startGame);
 
-  // for usage with mouse clicks
-  upBtn.addEventListener("click", handleControlClick);
-  leftBtn.addEventListener("click", handleControlClick);
-  downBtn.addEventListener("click", handleControlClick);
-  rightBtn.addEventListener("click", handleControlClick);
+  const buttons = [upBtn, leftBtn, downBtn, rightBtn];
+  buttons.forEach((btn) => {
+    btn.addEventListener("touchstart", touchStartHandler);
+    btn.addEventListener("touchmove", touchMoveHandler);
+    btn.addEventListener("touchend", touchEndHandler);
 
-  // for improved responsiveness on mobile devices
-  upBtn.addEventListener("touchstart", handleControlClick);
-  leftBtn.addEventListener("touchstart", handleControlClick);
-  downBtn.addEventListener("touchstart", handleControlClick);
-  rightBtn.addEventListener("touchstart", handleControlClick);
+    // Optional: Adding click event listeners for desktop devices
+    btn.addEventListener("click", (event) =>
+      handleControlClick(event.target.id)
+    );
+  });
 });
