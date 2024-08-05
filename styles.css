@@ -133,7 +133,7 @@ transform: rotate(180deg);
 
 #start-button {
   display: flex;
-  height: 32px;
+  height: 30px;
   text-align: center;
   width: 80px;
   font-family: 'Press Start 2P', cursive;
@@ -142,7 +142,7 @@ transform: rotate(180deg);
   border: solid 3px grey;
   border-radius: 3px;
   display: block;
-  margin: 46px 0 0 48px;
+  margin: 47px 0 0 48px;
   padding: 16px 7px 0 9px;
   align-items: center;
   font-size: 1rem;
