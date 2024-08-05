@@ -4,7 +4,7 @@
 
 ## Description
 
-Welcome to the Snake Game! This is a classic implementation of the Snake game using HTML, CSS, and JavaScript. Control the snake to eat food, grow longer, and avoid colliding with the walls or itself.
+Welcome to Classic Snake! This game is an implementation of Snake using HTML, CSS, and JavaScript. Control the snake to eat food, grow longer, and avoid colliding with the walls or itself.
 
 ## Table of Contents
 
@@ -28,19 +28,19 @@ Welcome to the Snake Game! This is a classic implementation of the Snake game us
 
 - Score Tracking: Keep track of your score as you play.
 
-- Game Over Display: Clear game over display when the snake collides with the wall or itself.
+- Game Over Display: Game over display occurs when the snake collides with the wall or itself.
 
 - Responsive Design: Works well on both desktop and mobile devices.
 
 ## Instructions
 
-1. Start the Game: Click the "Start Game" button to begin.
+1. Start the Game: Click the "Start" button to begin.
 
 2. Control the Snake:
 
     - Desktop: Use the arrow keys on your keyboard.
 
-    - Mobile: Use the on-screen arrow buttons.
+    - Mobile: Use the directional pad.
 
 3. Objective: Guide the snake to the food. Each time the snake eats the food, it grows longer, and your score increases.
 
