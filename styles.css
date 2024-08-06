@@ -11,7 +11,7 @@ body {
 .container {
   text-align: center;
   width: 100%;
-  max-width: 360px; /* Added max-width for better mobile scaling */
+  max-width: 360px;
   /* padding: 16px; */
   box-sizing: border-box;
 }
@@ -31,7 +31,7 @@ body {
   width: 320px;
   height: 320px;
   background-color: #1b1b1b;
-  font-family: 'Press Start 2P', cursive;
+  font-family: "Press Start 2P", cursive;
   font-size: 1.5rem;
   color: red;
   position: relative;
@@ -54,7 +54,7 @@ body {
 }
 
 .score {
-  font-family: 'Press Start 2P', cursive;
+  font-family: "Press Start 2P", cursive;
   color: grey;
   font-size: 1rem;
   margin: 16px;
@@ -63,8 +63,8 @@ body {
 .dpad {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
-  margin-top: 48px;
+  justify-content: space-between;
+  margin: 48px 32px 0px 32px;
 }
 
 #controls {
@@ -105,7 +105,7 @@ img {
 }
 
 #down-btn img {
-transform: rotate(180deg);
+  transform: rotate(180deg);
 }
 
 #left-btn {
@@ -115,7 +115,7 @@ transform: rotate(180deg);
 
 #left-btn img {
   transform: rotate(270deg);
-  }
+}
 
 #right-btn {
   grid-column: 3;
@@ -124,7 +124,7 @@ transform: rotate(180deg);
 
 #right-btn img {
   transform: rotate(90deg);
-  }
+}
 
 #center-btn {
   grid-column: 2;
@@ -133,17 +133,12 @@ transform: rotate(180deg);
 
 #start-button {
   display: flex;
-  height: 30px;
+  height: 48px;
   text-align: center;
-  width: 80px;
-  font-family: 'Press Start 2P', cursive;
+  font-family: "Press Start 2P", cursive;
   color: grey;
   background-color: #000;
-  border: solid 3px grey;
-  border-radius: 3px;
-  display: block;
-  margin: 47px 0 0 48px;
-  padding: 16px 7px 0 9px;
+  margin: 48px 0 0 0;
   align-items: center;
   font-size: 1rem;
   cursor: pointer;
